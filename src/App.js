@@ -4,6 +4,7 @@ import { FiSettings } from "react-icons/fi";
 import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Navbar, Footer, Sidebar, ThemeSettings } from "./components";
+import { useStateContext } from "./contexts/ContextProvider";
 import {
   Ecommerce,
   Orders,
@@ -23,7 +24,7 @@ import {
   Editor,
 } from "./pages";
 function App() {
-  const activeMenu = true;
+  const { activeMenu } = useStateContext();
   return (
     <div>
       <BrowserRouter>
@@ -32,7 +33,7 @@ function App() {
             <TooltipComponent content="Settings" position="Top">
               <button
                 className="text-3xl hover:drop-shadow-xl text-white"
-                style={{ background: "red", borderRadius: "50%" }}
+                style={{ background: "skyblue", borderRadius: "50%" }}
                 type="button">
                 <FiSettings />
               </button>
