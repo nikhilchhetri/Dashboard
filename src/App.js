@@ -33,7 +33,7 @@ function App() {
             <TooltipComponent content="Settings" position="Top">
               <button
                 className="text-3xl hover:drop-shadow-xl text-white"
-                style={{ background: "skyblue", borderRadius: "50%" }}
+                style={{ background: "#3C9C9C", borderRadius: "50%" }}
                 type="button">
                 <FiSettings />
               </button>
