@@ -16,7 +16,7 @@ import { scheduleData } from "../data/dummy";
 const Calendar = () => {
   return (
     <div className="mt-24 m-2 md:10 p-2 md:10 rounded-3xl bg-white ">
-      <Header category="Page" title="Calendar" />
+      <Header category="App" title="Calendar" />
       <ScheduleComponent
         height="650px"
         eventSettings={{

@@ -15,7 +15,7 @@ import {
 } from "@syncfusion/ej2-react-grids";
 const Customers = () => {
   return (
-    <div className="bg-white rounded-3xl p-2 md:p-10 m-2 md:m-10">
+    <div className="bg-white rounded-3xl p-2 md:p-10 m-2 md:m-10 mt-24">
       <Header category="Page" title="Customers" />
       <GridComponent
         dataSource={customersData}

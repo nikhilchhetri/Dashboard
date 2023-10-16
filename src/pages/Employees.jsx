@@ -12,7 +12,7 @@ import {
 } from "@syncfusion/ej2-react-grids";
 const Employees = () => {
   return (
-    <div className="bg-white rounded-3xl p-2 md:p-10 m-2 md:m-10">
+    <div className="bg-white rounded-3xl p-2 md:p-10 m-2 md:m-10 mt-24">
       <Header category="Page" title="Employees" />
       <GridComponent
         dataSource={employeesData}
