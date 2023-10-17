@@ -2,8 +2,10 @@ import React from "react";
 import { Button, SparkLine, Stacked } from "../components";
 import { SparklineAreaData, earningData } from "../data/dummy";
 import { GoDotFill } from "react-icons/go";
+import { useStateContext } from "../contexts/ContextProvider";
 
 const Ecommerce = () => {
+  const { currentColor } = useStateContext();
   return (
     <div className="mt-12">
       <div className="flex flex-wrap lg:flex-nowrap justify-center">
@@ -17,7 +19,7 @@ const Ecommerce = () => {
           <div className="mt-6">
             <Button
               text="Download"
-              bgColor="#3C9C9C"
+              bgColor={currentColor}
               color="white"
               borderRadius="10px"
               size="md"
@@ -96,7 +98,7 @@ const Ecommerce = () => {
               <div className="mt-10">
                 <Button
                   color="white"
-                  bgColor="#3C9C9C"
+                  bgColor={currentColor}
                   text="Download Report"
                   borderRadius="10px"
                 />

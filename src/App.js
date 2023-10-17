@@ -24,16 +24,25 @@ import {
   Editor,
 } from "./pages";
 function App() {
-  const { activeMenu } = useStateContext();
+  const {
+    activeMenu,
+    themeSettings,
+    setThemeSettings,
+    currentColor,
+    currentMode,
+  } = useStateContext();
   return (
-    <div>
+    <div className={currentMode === "Dark" ? "dark" : ""}>
       <BrowserRouter>
         <div className="flex relative dark:bg-main-dark-bg">
           <div className="fixed bottom-4 right-4" style={{ zIndex: "initial" }}>
             <TooltipComponent content="Settings" position="Top">
               <button
-                className="text-3xl hover:drop-shadow-xl text-white"
-                style={{ background: "#3C9C9C", borderRadius: "50%" }}
+                onClick={() => {
+                  setThemeSettings(true);
+                }}
+                className="p-2 text-3xl hover:drop-shadow-xl text-white hover:bg-light-gray"
+                style={{ background: currentColor, borderRadius: "50%" }}
                 type="button">
                 <FiSettings />
               </button>
@@ -47,7 +56,7 @@ function App() {
             <div className="w-0 dark:bg-secondary-dark-bg">Sidebar w-0</div>
           )}
           <div
-            className={`dark:bg-main-bg bg-main-bg min-h-screen w-full ${
+            className={`dark:bg-main-dark-bg bg-main-bg min-h-screen w-full ${
               activeMenu ? "md:ml-72" : "flex-2"
             }`}>
             <div className="fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full">
@@ -55,6 +64,7 @@ function App() {
             </div>
 
             <div>
+              {themeSettings && <ThemeSettings />}
               <Routes>
                 {/* Dashboard */}
                 <Route path="/" element={<Ecommerce />} />
@@ -77,7 +87,7 @@ function App() {
                 <Route path="/bar" element={<Bar />} />
                 <Route path="/pie" element={<Pie />} />
                 <Route path="/financial" element={<Financial />} />
-                <Route path="/color-picker" element={<ColorMapping />} />
+                <Route path="/color-mapping" element={<ColorMapping />} />
                 <Route path="/pyramid" element={<Pyramid />} />
                 <Route path="/stacked" element={<Stacked />} />
               </Routes>
